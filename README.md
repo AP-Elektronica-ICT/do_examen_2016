@@ -46,11 +46,15 @@ als `do_examen16_achternaamvoornaam` en ingediend worden via blackboard.
 * De web role moeten worden afgemaakt deze wordt aangeroepen door de playbook
   `webrole.yml` Deze role installeert en configureert de nginx webserver. De
   configuratie file voor de webserver staat op volgende locatie
-  `roles/web/files/rollback`
+  `roles/web/files/rollback`. Git moet ook geinstalleerd worden en heeft geen
+  configuratie nodig.
 
 * De playbook `bleeding.yml` aanpassen zodat deze de `bleeding` branch pulled.
+  De destination staat in de config file van de website.
+
 
 * De playbook `stable.yml` aanpassen zodat deze de `stable` branch pulled.
+  De destination staat in de config file van de website.
 
 
 ## Verbetersleutel
