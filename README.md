@@ -83,11 +83,11 @@ container door gebruik te maken een `docker-compose` file. In totaal moeten er
 
 1. `vagrant up`
 2. `vagrant ssh mgr`
-  1. `ansible-playbook -i /vagrant/hosts /vagrant/lb.yml`
+    1. `ansible-playbook -i /vagrant/hosts /vagrant/lb.yml`
 3. `vagrant ssh web`
-  1. `cd /vagrant`
-  2. `docker build -t web web`
-  3. `docker-compose up -d`
+    1. `cd /vagrant`
+    2. `docker build -t web web`
+    3. `docker-compose up -d`
 4. Surf naar `http://192.168.50.19`
 5. Surf naar `http://192.168.50.19/haproxy?stats`
 6. Refresh website
