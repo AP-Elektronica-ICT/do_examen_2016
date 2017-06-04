@@ -93,8 +93,7 @@ container door gebruik te maken een `docker-compose` file. In totaal moeten er
 6. Refresh website
 7. Refresh stats
 
-Lukt dit dan kan u 70% van de punten behalen, er sta ook nog op 15% op de
-kwaliteit. De laatste 15% kan u verdienen als stap 2 en 3 kunnen weggelaten
+Lukt dit dan kan u 80% van de punten behalen,  De laatste 20% kan u verdienen als stap 2 en 3 kunnen weggelaten
 worden.
 
 
