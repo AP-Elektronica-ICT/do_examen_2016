@@ -81,16 +81,22 @@ container door gebruik te maken een `docker-compose` file. In totaal moeten er
 
 ## Verbetersleutel 
 
-* `vagrant up`
-* `vagrant ssh mgr`
-  * `ansible-playbook -i /vagrant/hosts /vagrant/lb.yml`
-* `vagrant ssh web`
-  * `cd /vagrant`
-  * `docker build -t web web`
-  * `docker-compose up -d`
-* Surf naar `http://192.168.50.19`
-* Surf naar `http://192.168.50.19/haproxy?stats`
-* Refresh website
-* Refresh stats
+1. `vagrant up`
+2. `vagrant ssh mgr`
+  1. `ansible-playbook -i /vagrant/hosts /vagrant/lb.yml`
+3. `vagrant ssh web`
+  1. `cd /vagrant`
+  2. `docker build -t web web`
+  3. `docker-compose up -d`
+4. Surf naar `http://192.168.50.19`
+5. Surf naar `http://192.168.50.19/haproxy?stats`
+6. Refresh website
+7. Refresh stats
+
+Lukt dit dan kan u 70% van de punten behalen, er sta ook nog op 15% op de
+kwaliteit. De laatste 15% kan u verdienen als stap 2 en 3 kunnen weggelaten
+worden.
+
+
 
 
