@@ -38,8 +38,8 @@ frontend http-in
 
 backend app
     balance     roundrobin
-    server web1 192.168.50.12 check port 80
-    server web2 192.168.50.12 check port 81
-    server web3 192.168.50.12 check port 82
-    server web4 192.168.50.12 check port 83
+    server web1 192.168.50.11 check port 80
+    server web2 192.168.50.12 check port 80
+    server web3 192.168.50.13 check port 80
+    server web4 192.168.50.14 check port 80
 

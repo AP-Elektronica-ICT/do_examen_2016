@@ -2,9 +2,9 @@
 
 Het doel van het examen is een opzetten van een multi  instances website met een
 loadbalancer. De Loadbalancer draait op een virtuele machine. De provisioning
-hiervan word uitgevoerd door Ansible. De website runt in een container. De
-verschillende instanties van de container draaien op een virtuele machine.
-Vagrant configureert de virtuele machines.
+hiervan word uitgevoerd door Ansible. De website word op dezelfde manier
+opgezet en geconfigureerd. Er worden 4 instances opgezet van de website.  Vagrant
+configureert de virtuele machines.
 
 ## Projectstructuur
 
@@ -54,8 +54,8 @@ van de loadbalancer.**
 
 * Toevoegen van extra virtuele machine als docker host
 * Opzetten van communicatie tussen beiden machines
-  * Beide machines zijn te bereiken op een `private_network`
-  * Loadbalancer is vanuit host omgeving bereikbaar op poort `8000`
+  * Alle machines zijn te bereiken op een `private_network`
+  * Loadbalancer is vanuit host omgeving bereikbaar op poort `8000`dd
 
 ### Loadbalancer
 
@@ -68,33 +68,31 @@ conform is met de configuratie.
 * Vervolledig de `lb` rol
 * Maak een playbook aan voor het oproepen van de rol
 
-### Website
+### Loadbalancer
 
-De website is te vinden in de map web. Voor de website schrijf je een
-`Dockerfile` die gebaseerd is op de nginx container. Je maakt de instantie van je
-container door gebruik te maken een `docker-compose` file. In totaal moeten er
-4 instances van de website draaien.
+Maak een ansible playbook die de web nodes provisiont met nginx en de web
+folder gebruikt als www root. Er is al een gedeelte aanwezig vul de rest aan.
+De configuratie file van de standaard nginx installatie kan 'as is' gebruikt
+worden. Er moeten geen aanpassing worden gemaakt zolang het de rest conform is
+met de configuratie. Vergeet niet de www root juist in te stellen. 
 
-* Maak een `Dockerfile` voor de website
-* Beschrijf de 4 instances van de container in een `docker-compose` file 
-
+* Ansible kan zonder paswoord verbinden met target machine
+* Vervolledig de `web` rol
+* Maak een playbook aan voor het oproepen van de rol
 
 ## Verbetersleutel 
 
 1. `vagrant up`
 2. `vagrant ssh mgr`
     1. `ansible-playbook -i /vagrant/hosts /vagrant/lb.yml`
-3. `vagrant ssh web`
-    1. `cd /vagrant`
-    2. `docker build -t web web`
-    3. `docker-compose up -d`
+    1. `ansible-playbook -i /vagrant/hosts /vagrant/web.yml`
 4. Surf naar `http://192.168.50.19`
 5. Surf naar `http://192.168.50.19/haproxy?stats`
 6. Refresh website
 7. Refresh stats
 
-Lukt dit dan kan u 80% van de punten behalen,  De laatste 20% kan u verdienen als stap 2 en 3 kunnen weggelaten
-worden.
+Lukt dit dan kan u 80% van de punten behalen,  De laatste 20% kan u verdienen
+door stap 2 overbodig te maken.
 
 
 
